@@ -1,0 +1,120 @@
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top:60px;
+        right: -100%;
+        left:auto;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: right 0.3s ease;
+        align-items: flex-start
+    }
+
+    
+
+    nav ul li {
+        margin: 10px 20px 0px;
+        text-align: center;
+    }
+
+    .request-quote {
+        margin: 20px 0;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 50px; 
+    transform: translateX(-50%); /*Moves the icon 50% to the left */
+    }
+
+    .fa-bars {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    nav.active ul {
+        right: 0;
+    }
+
+    .request-quote{
+        display:none;
+    }
+    .overlay h1{
+        font-size: 40px;
+    }
+
+    .content-container{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .logo-and-text img{
+        width: 100%;
+    
+    }
+
+    .section-title{
+        font-size: 40px;
+    }
+
+    .section-subtitle{
+        font-size: 20px;
+    }
+
+    .services-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .video-grid{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .flexbox-container{
+        flex-direction: column;
+    }
+
+    .flexbox-item h1{
+        margin:15px;
+    }
+
+    .checkout-image-container img{
+        
+            width: 100%; /* Takes up 40% of the width */
+    }
+
+    .image-grid {
+        
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        
+    }
+
+    .overlay p{
+        font-size: 15px;
+    }
+
+    .review-section, .faq-section{
+        flex-direction: column;
+    }
+    .review-section img{
+        width:100%;
+    }
+
+    .social-media {
+        
+        left: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 200px;
+    }
+
+    .request-quote {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

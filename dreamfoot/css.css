@@ -1,0 +1,381 @@
+
+body{
+    width: 100%;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+.Founders{
+    margin-bottom: 100PX;
+}
+#Features {
+    --color: rgb(0, 0, 0);
+    --bgColor: rgb(252, 252, 252);
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    gap: 2rem;
+    padding: 2rem;
+   
+    color: var(--color);
+    background: var(--bgColor);
+}
+
+#subhead { 
+    font-weight: 20;
+    font-size: 21px;
+    text-align: center; 
+    width: 60%;
+    margin-left: 18%;
+    margin-bottom: 2%;
+    
+}
+
+#head { 
+    text-align: center;
+    font-size: 3.5rem;
+    /* color: rgb(32, 30, 30); */
+}
+
+#Features ol {
+    width: min(80rem, 100%);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    counter-reset: stepnr;
+}
+
+#Features ol li {
+    counter-increment: stepnr;
+    width: 25rem;
+    --borderS: 2rem;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: calc(var(--borderS) + 5.5rem);
+    position: relative;
+}
+
+#Features ol li::before,
+#Features ol li::after {
+    inset: 0;
+    position: absolute;
+    border-radius: 50%;
+    border: var(--borderS) solid var(--bgColor);
+}
+
+#Features ol li::after {
+    content: "";
+    filter: drop-shadow(-0.25rem 0.100rem 0.0675rem rgba(0, 0, 0, 0.75)) blur(0px);
+}
+
+#Features ol li > * { width: 10rem; }
+#Features ol li .icon {  text-align: center; } 
+#Features ol li .title { font-size: 1.8rem; font-weight: 650; width: 20rem; color: rgb(160, 128, 128);}
+#Features ol li .title1 { font-size: 1.8rem; font-weight: 650; width: 20rem; margin-left: -15%; color: rgb(160, 128, 128); } 
+#Features ol li .descr { line-height: 150%;  text-align: center; font-size: 1.1rem; font-weight: 300;width: 15rem;margin-left: -15%; margin-top: 5%; }
+
+@media(max-width:1000px) {
+    header ul {
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgb(255, 255, 255);
+        height: calc(100vh - 100px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 2s linear;
+    }
+    
+    header .menu {
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    
+    #chk1:checked ~ ul {
+        right: 0;
+    }
+    .subhead{
+        width: 100%;
+        font-size: 100%;
+
+    }
+}
+
+
+.Founders {
+    font-weight: 300;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#nammmm {
+    font-weight: 800;
+    margin: 2rem 0 0.25rem 0;
+    color: rgb(0, 0, 0);
+    line-height: 200%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.Founders h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+}
+
+.Founders p {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.Founders header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#hedddd {
+    font-size: 400%;
+    font-weight: 900;
+}
+
+.articles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px; /* Gap between the two articles */
+}
+
+figure {
+    cursor: pointer;
+    width: 500px;
+    aspect-ratio: 8 / 5;
+    --bg: hsl(350 80% calc(90% - (var(--hover) * 10%)));
+    --accent: hsl(280 80% 40%);
+    transition: background 0.2s;
+    background:
+        radial-gradient(circle at top left, var(--accent), transparent 75%),
+        var(--bg);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
+figure:after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 10%;
+    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+    filter: blur(25px);
+    transform:
+        translateX(calc(var(--hover) * 15%))
+        scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s, background 0.2s;
+}
+
+.Founders img {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 50%;
+    transform:
+        translateX(calc(var(--hover) * -15%))
+        scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s;
+}
+
+article {
+    --hover: 0;
+}
+
+article:hover {
+    --hover: 1;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    .articles-container {
+        flex-direction: column;
+        gap: 40px; /* Adjust gap between articles */
+    }
+
+    figure {
+        width: 800px; /* Adjust figure size for tablets */
+    }
+
+    #hedddd {
+        font-size: 300%; /* Adjust header font size for tablets */
+    }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column;
+        gap: 20px; /* Adjust gap between articles */
+    }
+
+    figure {
+        width: 100%; /* Make figures take full width on mobile */
+        aspect-ratio: auto; /* Adjust aspect ratio for better fit */
+    }
+
+    #hedddd {
+        font-size: 250%; /* Adjust header font size for mobile */
+    }
+
+    #nammmm {
+        font-size: 1.5rem; /* Adjust name font size for mobile */
+    }
+
+    .Founders h1 {
+        font-size: 2rem; /* Adjust h1 font size for mobile */
+    }
+}
+
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.slider-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    background: rgba(62, 62, 62, 0.8);
+    border-radius: 10px;
+    color: wheat;
+}
+
+.slide img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.slide h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.slide p {
+    font-size: .9rem;
+    color: white;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+}
+
+.prev {
+    left: -10px;
+}
+
+.next {
+    right: -11px;
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+    .slide {
+        min-width: 50%;
+    }
+
+    .slide h2 {
+        font-size: 20px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide {
+        min-width: 100%;
+    }
+
+    .slide h2 {
+        font-size: 18px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+
+    button.prev, button.next {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide h2 {
+        font-size: 16px;
+    }
+
+    .slide p {
+        font-size: 12px;
+    }
+
+    .slide img {
+        width: 80px;
+        height: 80px;
+    }
+
+    button.prev, button.next {
+        font-size: 20px;
+    }
+}
+
+
+
