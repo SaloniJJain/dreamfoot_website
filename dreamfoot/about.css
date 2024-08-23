@@ -27,7 +27,7 @@ h1{
 }
 
 .hero{
-    max-width: 1280px;
+    max-width: 100%;
 }
 .hero-container{
     background-image: url(bg.jpg);
@@ -264,7 +264,7 @@ button:hover .star-6 {
 
   /* bgimg3 */
 .bg-img{
-  max-width: 1280px;
+  max-width: 100%;
 }
 .bg-img3{
   width: 100%;
@@ -284,7 +284,7 @@ button:hover .star-6 {
 /* success */
 
 .success{
-  max-width: 1280px;
+  max-width: 100%;
   color: white;
   position: relative;
   background: #070601;
@@ -318,7 +318,7 @@ button:hover .star-6 {
 }
 #card{
   background-color: #070601;
-  max-width: 1280px;
+  max-width: 100x;
 }
 .container {
   position: relative;
@@ -425,7 +425,7 @@ button:hover .star-6 {
 /* form */
 
 .contact{
-  max-width: 1280px;
+  max-width: 100%;
   color: white;
 }
 

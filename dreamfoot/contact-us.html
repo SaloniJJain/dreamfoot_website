@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leading video production company creating impactful and engaging videos for businesses and brands.">
+    <title>Redesigned UI</title>
+    <link rel="stylesheet" href="contact_us_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="contact_us_script.js"></script>
+<script src="app.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const footerSections = document.querySelectorAll('.footer-section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target); // Stop observing once the animation is triggered
+                }
+            });
+        }, {
+            threshold: 0.2 // Trigger when 20% of the footer is in view
+        });
+
+        footerSections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav').classList.toggle('active');
+});
+
+
+
+</script>
+</head>
+<body>
+    <header>
+        <img src="images/dreamfoot logo.png" class="logo" alt="Company Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="#">Corporate Video</a>
+                        <a href="#">Ecommerce Product Video Production</a>
+                        <a href="#">Ad Film</a>
+                        <a href="#">Promotional Video Production</a>
+                        <a href="#">HR Video Production</a>
+                        <a href="#">Social Impact Video Production</a>
+                        <a href="#">Training Video Production</a>
+                        <a href="#">Explainer Video</a>
+                        <a href="#">Safety Animation</a>
+                        <a href="#">Product Animation</a>
+                        <a href="#">360° Virtual Tours</a>
+                    </div>
+                </li>
+                <li><a href="#">CASE STUDIES</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="contact-us.html">CONTACT US</a></li>
+                <!-- <li><a href="#" class="nav-toggle hover-link"><i class="fa fa-bars green-icon"></i></a></li> -->
+
+            </ul>
+        </nav>
+        <button class="request-quote">Request Quote</button>
+        <a href="#" class="nav-toggle hover-link"><i class="fa fa-bars green-icon"></i></a>
+
+    </header>
+
+    <div class="background-image">
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1330 250">
+            <path fill="#fff" fill-opacity="1" d="M0,64L60,96C120,128,240,192,360,213.3C480,235,600,213,720,176C840,139,960,85,1080,64C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
+    </div>
+<div class="con_add_section">
+    <div class="contact-section">
+        <div class="contact-form">
+            <h2>We'd <span>💜</span> to help!</h2>
+            <p>We make great video content. Share a little detail about your project so we can tailor the solution that's right for you.</p>
+            <form>
+                <div class="form-grid">
+                    <div class="form-row">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="video-type">What kind of video are you looking for?*</label>
+                        <select id="video-type" name="video-type" required>
+                            <option value="">- Select -</option>
+                            <option value="corporate">Corporate Video</option>
+                            <option value="ad">Ad Film</option>
+                            <option value="promotional">Promotional Video</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="budget">Estimated Budget *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">- Select -</option>
+                            <option value="5000">$5,000 - $10,000</option>
+                            <option value="10000">$10,000 - $20,000</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="deadline">When do you want the video?</label>
+                        <input type="text" id="deadline" name="deadline" placeholder="When do you want the video?">
+                    </div>
+                    <div class="form-row">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" placeholder="Company Name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="source">Where did you hear about us?</label>
+                        <select id="source" name="source">
+                            <option value="">- Select -</option>
+                        </select>
+                    </div>
+                    <div class="form-row full-width">
+                        <label for="reference">Share any reference video links</label>
+                        <textarea id="reference" name="reference" rows="3" placeholder="Share any reference video links"></textarea>
+                    </div>
+                    <div class="form-row full-width">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+        
+        <div class="contact-info">
+            <div class="address-block">
+                <h3>Our Address</h3>
+                <p><strong>Head Office:</strong><br>
+                404 Everest Hub, Opp. Narayan Garden Soc.<br>
+                Gotri-Laxmipura Road, Gotri<br>
+                Vadodara – 390021</p>
+        
+                <p><strong>Mumbai Office:</strong><br>
+                10th Floor, Parinee Crescenzo, C-30, G Block,<br>
+                Bandra Kurla Complex, Bandra East,<br>
+                Mumbai- 400051</p>
+        
+                <p><strong>GET IN TOUCH VIA EMAIL OR PHONE</strong><br>
+                <a href="mailto:contact@dreamfoot.in">contact@dreamfoot.in</a><br>
+                <a href="tel:+919081819613">+91- 908 181 9613</a></p>
+            </div>
+            <div class="join-us-block">
+                <h3>Join Us</h3>
+                <p>We are currently looking to fill the following positions:</p>
+                <ul>
+                    <li>Editors</li>
+                    <li>Cinematographers</li>
+                    <li>Animators</li>
+                    <li>Graphic Artists</li>
+                </ul>
+                <p>Please write to us at <a href="mailto:hr@dreamfoot.in">hr@dreamfoot.in</a>.<br>
+                If you are a model/actor, send in your portfolio at <a href="mailto:casting@dreamfoot.in">casting@dreamfoot.in</a>.</p>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.95106615534!2d76.76355477113817!3d28.644287345100643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1721201622897!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section footer-logo-and-social">
+            <img src="images/dreamfoot logo.png" alt="Company Logo" class="footer-logo">
+            <p>Follow us on social media</p>
+            <div class="footer-social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-address">
+                <p><strong>Head Office Address</strong><br>
+                    404 Everest Hub, Opp. Narayan Garden Soc., Gotri-Laxmipura Road,<br>
+                    Gotri, Vadodara – 390021</p>
+
+                <p><strong>Mumbai Office Address</strong><br>
+                    10th Floor, Parinee Crescenzo, C-30, G Block, BKC, Bandra (E),<br>
+                    Mumbai – 400051</p>
+            </div>
+        </div>
+        <div class="footer-section footer-services">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Corporate Video</a></li>
+                <li><a href="#">Ecommerce Product Video</a></li>
+                <li><a href="#">Ad Film</a></li>
+                <li><a href="#">Promotional Video</a></li>
+                <li><a href="#">Human Resources Video</a></li>
+                <li><a href="#">Social Impact Video</a></li>
+                <li><a href="#">Training Video</a></li>
+                <li><a href="#">Explainer Video</a></li>
+                <li><a href="#">Safety Animation</a></li>
+                <li><a href="#">Product Animation</a></li>
+                <li><a href="#">360° Virtual Tours</a></li>
+            </ul>
+        </div>
+        <div class="footer-section footer-links">
+            <h4>Dreamfoot</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Video Production Agency</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section footer-reviews">
+            <h4>Clutch</h4>
+            <div class="review-box">
+                <div class="stars">
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <p class="review-text">"They completed the project within the given time frame without sacrificing
+                    quality."</p>
+                <p class="review-author">Manager, Engineering Consultancy</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
